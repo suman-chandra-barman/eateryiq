@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`sticky top-0 z-50 p-4 sm:px-6 lg:px-8 transition-colors duration-200 ${
-        scrolled ? "bg-stone-50 backdrop-blur-md" : "bg-transparent"
+        scrolled ? "bg-[#F2F7FF] backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto">

@@ -1,5 +1,13 @@
-
+import DashboardSection from "@/components/Home/DashboardSection";
+import HeroSection from "@/components/Home/HeroSection";
+import SponsorSlider from "@/components/Home/SponsorSlider";
 
 export default function Home() {
-  return <>hello world</>;
+  return (
+    <div className="container mx-auto px-4">
+      <HeroSection />
+      <DashboardSection />
+      <SponsorSlider />
+    </div>
+  );
 }
