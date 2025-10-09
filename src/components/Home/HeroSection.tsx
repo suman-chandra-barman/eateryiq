@@ -20,7 +20,7 @@ const HeroSection = () => {
           <span className=" text-blue-600 mb-6"> Data In, </span> Insights Out.
         </h1>
 
-        <p className="text-lg text-gray-600 font-medium mb-8 max-w-2xl mx-auto">
+        <p className="md:text-lg text-gray-600 font-medium mb-8 max-w-2xl mx-auto">
           Boost sales. Cut expenses. Run smarter. EateryIQ combines AI with
           proven restaurant expertise to optimize marketing, streamline labor
           and HR, and deliver actionable insights — all from one powerful

@@ -1,6 +1,7 @@
 import DashboardSection from "@/components/Home/DashboardSection";
 import HeroSection from "@/components/Home/HeroSection";
 import SponsorSlider from "@/components/Home/SponsorSlider";
+import WhyEateryIQ from "@/components/Home/WhyEateryIQ";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <DashboardSection />
       <SponsorSlider />
+      <WhyEateryIQ />
     </div>
   );
 }

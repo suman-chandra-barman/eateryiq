@@ -48,7 +48,7 @@ function SponsorSlider() {
             <Image
               src={sponsor.src}
               alt={sponsor.alt}
-              className="w-24 h-10 mx-auto"
+              className="w-40 h-10 mx-auto"
             />
           </SwiperSlide>
         ))}

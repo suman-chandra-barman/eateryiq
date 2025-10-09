@@ -56,11 +56,11 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`sticky top-0 z-50 p-4 sm:px-6 lg:px-8 transition-colors duration-200 ${
+      className={`sticky top-0 z-50 transition-colors duration-200 ${
         scrolled ? "bg-[#F2F7FF] backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto p-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -96,9 +96,7 @@ const Navbar: React.FC = () => {
             <Button size="sm" variant="outline" className="mr-2">
               Sign in
             </Button>
-            <Button>
-              Get Started
-            </Button>
+            <Button>Get Started</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -163,11 +161,7 @@ const Navbar: React.FC = () => {
                 <Button size="sm" variant="outline" onClick={toggleMenu}>
                   Sign in
                 </Button>
-                <Button
-                  onClick={toggleMenu}
-                >
-                  Get Started
-                </Button>
+                <Button onClick={toggleMenu}>Get Started</Button>
               </div>
             </div>
           </div>
