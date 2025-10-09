@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const WhyEateryIQ = () => {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="my-12 md:my-24 bg-background">
       <div className="container mx-auto">
         {/* Header */}
         <div className="text-center mb-16 md:mb-20">
