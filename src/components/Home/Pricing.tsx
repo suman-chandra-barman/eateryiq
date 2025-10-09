@@ -91,7 +91,7 @@ export function Pricing() {
         {plans.map((plan, index) => (
           <Card
             key={index}
-            className={`relative flex flex-col bg-blue-100 border-blue-200 ${
+            className={`relative flex flex-col bg-blue-50 border-blue-200 ${
               plan.popular ? "scale-105 md:scale-110" : ""
             }`}
           >

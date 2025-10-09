@@ -6,6 +6,7 @@ import { Insights } from "@/components/Home/Insights";
 import { Pricing } from "@/components/Home/Pricing";
 import { Schedule } from "@/components/Home/Schedule";
 import SponsorSlider from "@/components/Home/SponsorSlider";
+import { Testimonials } from "@/components/Home/Testimonials";
 import WhyEateryIQ from "@/components/Home/WhyEateryIQ";
 
 export default function Home() {
@@ -19,7 +20,8 @@ export default function Home() {
       <AISportlight />
       <Schedule />
       <Features />
-      <Pricing/>
+      <Pricing />
+      <Testimonials />
     </div>
   );
 }
