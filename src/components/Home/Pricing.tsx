@@ -91,10 +91,8 @@ export function Pricing() {
         {plans.map((plan, index) => (
           <Card
             key={index}
-            className={`relative flex flex-col bg-blue-100 ${
-              plan.popular
-                ? "border-blue-600 shadow-lg scale-105 md:scale-110"
-                : "border-blue-200"
+            className={`relative flex flex-col bg-blue-100 border-blue-200 ${
+              plan.popular ? "scale-105 md:scale-110" : ""
             }`}
           >
             {plan.popular && (
@@ -108,7 +106,12 @@ export function Pricing() {
             <CardHeader className="space-y-4 pt-8">
               <div className="flex items-center gap-3">
                 <div className="rounded-2xl flex items-center justify-center p-2 bg-white">
-                 <Image src={plan.icon} alt={plan.name} width={45} height={45} />
+                  <Image
+                    src={plan.icon}
+                    alt={plan.name}
+                    width={45}
+                    height={45}
+                  />
                 </div>
                 <div>
                   <h3 className="text-xl md:text-2xl font-bold">{plan.name}</h3>
