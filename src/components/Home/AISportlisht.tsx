@@ -6,7 +6,7 @@ export function AISportlight() {
     <section className="w-full my-12 md:my-24">
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
         {/* Left side - Dashboard Image */}
-        <div className="rounded-lg overflow-hidden p-4 bg-blue-50">
+        <div className="order-2 lg:order-1 rounded-lg overflow-hidden p-4 bg-blue-50">
           <Image
             src={dasboardImage}
             alt="Operator Dashboard"
