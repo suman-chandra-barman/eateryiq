@@ -1,3 +1,4 @@
+import { AISportlight } from "@/components/Home/AISportlisht";
 import DashboardSection from "@/components/Home/DashboardSection";
 import HeroSection from "@/components/Home/HeroSection";
 import { Insights } from "@/components/Home/Insights";
@@ -12,6 +13,7 @@ export default function Home() {
       <SponsorSlider />
       <WhyEateryIQ />
       <Insights />
+      <AISportlight />
     </div>
   );
 }
