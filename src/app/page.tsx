@@ -3,6 +3,7 @@ import DashboardSection from "@/components/Home/DashboardSection";
 import { Features } from "@/components/Home/Features";
 import HeroSection from "@/components/Home/HeroSection";
 import { Insights } from "@/components/Home/Insights";
+import { Pricing } from "@/components/Home/Pricing";
 import { Schedule } from "@/components/Home/Schedule";
 import SponsorSlider from "@/components/Home/SponsorSlider";
 import WhyEateryIQ from "@/components/Home/WhyEateryIQ";
@@ -18,6 +19,7 @@ export default function Home() {
       <AISportlight />
       <Schedule />
       <Features />
+      <Pricing/>
     </div>
   );
 }
