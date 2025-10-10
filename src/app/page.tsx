@@ -3,6 +3,7 @@ import DashboardSection from "@/components/Home/DashboardSection";
 import { Features } from "@/components/Home/Features";
 import HeroSection from "@/components/Home/HeroSection";
 import { Insights } from "@/components/Home/Insights";
+import { MissionVision } from "@/components/Home/MissionVision";
 import { Pricing } from "@/components/Home/Pricing";
 import { Schedule } from "@/components/Home/Schedule";
 import SponsorSlider from "@/components/Home/SponsorSlider";
@@ -22,6 +23,7 @@ export default function Home() {
       <Features />
       <Pricing />
       <Testimonials />
+      <MissionVision />
     </div>
   );
 }
