@@ -6,7 +6,7 @@ const FeatureHeroSection = () => {
     <section className=" bg-white text-gray-800 my-16 md:my-24">
       {/* Content */}
       <div className="relative z-10 max-w-xl mx-auto text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold text-gray-900 mb-4">
           Run Your
           <span className="text-blue-600"> Restaurant With Data, </span> Not
           Guesswork.

@@ -40,9 +40,8 @@ export function Insights() {
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
         {/* Left side - Content */}
         <div className="space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
-            Executive-Level <span className="text-blue-600">Insights</span>
-            <br />
+          <h2 className="text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold tracking-tight max-w-2xl">
+            Executive-Level <span className="text-blue-600"> Insights </span>
             with EateryGPT.
           </h2>
 
@@ -57,7 +56,7 @@ export function Insights() {
           <div className="grid grid-cols-3 gap-6 pt-4">
             {stats.map((stat, index) => (
               <div key={index} className="space-y-1 relative">
-                <div className="text-3xl md:text-4xl font-bold">
+                <div className="text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">

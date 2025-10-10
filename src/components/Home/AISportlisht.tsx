@@ -22,7 +22,7 @@ export function AISportlight() {
             AI Spotlight EateryGPT
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
+          <h1 className="text-3xl md:text-4xl lg:text-[40px]  leading-13 max-w-2xl font-bold tracking-tight">
             More Than Chat;{" "}
             <span className="text-blue-600">Your AI Partner</span> in Strategy
           </h1>

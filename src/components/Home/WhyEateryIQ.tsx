@@ -13,7 +13,7 @@ const WhyEateryIQ = () => {
             WHY EATERYIQ
           </span>
         </div>
-        <h2 className="max-w-xl mx-auto text-3xl md:text-4xl font-bold">
+        <h2 className="max-w-2xl mx-auto text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold">
           {"Designed to "}
           <span className="text-blue-600">Empower Every Role</span>
           {" in Your Restaurant"}

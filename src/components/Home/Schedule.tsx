@@ -12,9 +12,8 @@ export function Schedule() {
             Schedule
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
+          <h1 className="text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold tracking-tight max-w-2xl">
             Smarter Marketing.
-            <br />
             <span className="text-blue-600">Higher Returns.</span>
           </h1>
 
@@ -29,7 +28,6 @@ export function Schedule() {
           <Image
             src={shedule}
             alt="Schedule"
-       
             className="w-full h-auto"
             priority
           />

@@ -30,7 +30,7 @@ export function Features() {
     <section className="my-16 md:my-24">
       {/* Header */}
       <div className="text-center mb-12 md:mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-balance max-w-xl mx-auto">
+        <h2 className="text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold text-balance max-w-2xl mx-auto">
           Specially Designed For{" "}
           <span className="text-blue-600">Smarter Restaurant</span> Operations.
         </h2>
