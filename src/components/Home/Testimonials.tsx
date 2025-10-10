@@ -6,13 +6,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import user from "@/assets/user.png"
+import user from "@/assets/user.png";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { ShareThoughtModal } from "../Modals/ShareThoughtModal";
 
 const testimonials = [
   {
@@ -67,6 +68,7 @@ const testimonials = [
 
 export function Testimonials() {
   const swiperRef = useRef<SwiperType>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section className="relative my-12 md:my-24 overflow-hidden">
@@ -169,10 +171,13 @@ export function Testimonials() {
         <Button
           size="lg"
           className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-full"
+          onClick={() => setIsModalOpen(true)}
         >
           Share Your Thought
         </Button>
       </div>
+
+      <ShareThoughtModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 }
