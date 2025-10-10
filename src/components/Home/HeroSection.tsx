@@ -14,7 +14,7 @@ const HeroSection = () => {
             We&#39;ve just released this new feature
           </span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Your Restaurant&#39;s
           <span className="text-blue-600"> AI Command Center</span> <br />
           <span className=" text-blue-600 mb-6"> Data In, </span> Insights Out.
