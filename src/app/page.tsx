@@ -1,5 +1,6 @@
 import { AISportlight } from "@/components/Home/AISportlisht";
 import DashboardSection from "@/components/Home/DashboardSection";
+import { FaqSection } from "@/components/Home/FAQ";
 import { Features } from "@/components/Home/Features";
 import HeroSection from "@/components/Home/HeroSection";
 import { Insights } from "@/components/Home/Insights";
@@ -24,6 +25,7 @@ export default function Home() {
       <Pricing />
       <Testimonials />
       <MissionVision />
+      <FaqSection />
     </div>
   );
 }
