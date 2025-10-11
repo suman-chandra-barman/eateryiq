@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import pointer from "@/assets/lsicon_pointer.svg";
 import Image from "next/image";
 
