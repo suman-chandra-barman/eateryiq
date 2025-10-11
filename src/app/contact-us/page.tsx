@@ -23,7 +23,7 @@ export default function ContactUsPage() {
     <div className="container mx-auto py-12 md:py-24 px-4">
       {/* Header */}
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl lg:text-[40px] leading-13 font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-4xl lg:text-[40px] md:leading-13 font-bold text-gray-900 mb-4">
           We&#39;d Love <span className="text-blue-600">to Hear</span> from You
         </h2>
         <p className="text-gray-600 max-w-lg mx-auto">

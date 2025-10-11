@@ -77,7 +77,7 @@ export function Pricing() {
             PRICING PLAN
           </span>
         </div>
-        <h2 className="text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold max-w-4xl mx-auto">
+        <h2 className="text-3xl md:text-4xl lg:text-[40px]  md:leading-13 font-bold max-w-4xl mx-auto">
           Scale Seamlessly with{" "}
           <span className="text-blue-600">
             EATERYIQ Affordable Packages Designed
@@ -119,7 +119,7 @@ export function Pricing() {
               </div>
               <p className="text-sm text-gray-600">{plan.description}</p>
               <div className="flex items-baseline gap-1">
-                <span className="text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold">
+                <span className="text-3xl md:text-4xl lg:text-[40px]  md:leading-13 font-bold">
                   {plan.price}
                 </span>
                 <span className="text-gray-600">{plan.period}</span>

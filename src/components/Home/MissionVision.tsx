@@ -14,7 +14,7 @@ export function MissionVision() {
             OUR MISSION AND VISION
           </span>
         </div>
-        <h2 className="text-3xl md:text-4xl lg:text-[40px]  leading-13 max-w-4xl mx-auto font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-4xl lg:text-[40px]  md:leading-13 max-w-4xl mx-auto font-bold text-gray-900 mb-4">
           Built by Operators. Powered by AI.{" "}
           <span className="text-blue-600">Designed for Your Growth.</span>{" "}
           Don&apos;t get left behind.

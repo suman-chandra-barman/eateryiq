@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Upload, Brain, FileText, Bell, Bot, TrendingUp, UserCogIcon } from "lucide-react";
+import {
+  Upload,
+  Brain,
+  FileText,
+  Bell,
+  Bot,
+  TrendingUp,
+  UserCogIcon,
+} from "lucide-react";
 
 const steps = [
   {
@@ -43,7 +51,7 @@ const steps = [
     title: "Get Forecasts & Recommendations",
     description:
       "Receive customized forecasts and smart recommendations to optimize menu pricing, staffing, marketing campaigns, and delivery performance for maximum profitability.",
-    icon: TrendingUp ,
+    icon: TrendingUp,
     side: "left",
   },
   {
@@ -86,7 +94,7 @@ export default function HowItWorksPage() {
     <div ref={sectionRef} className="container mx-auto px-4 py-12 md:py-24">
       {/* Header */}
       <div className="text-center mb-20">
-        <h2 className="text-3xl md:text-4xl lg:text-[40px] leading-13 font-bold text-gray-900 mb-4">
+        <h2 className="text-3xl md:text-4xl lg:text-[40px] md:leading-13 font-bold text-gray-900 mb-4">
           How <span className="text-blue-600">EateryIQ</span> Works
         </h2>
         <p className="text-gray-600 max-w-3xl mx-auto">

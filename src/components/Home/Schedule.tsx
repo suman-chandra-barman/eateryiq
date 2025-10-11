@@ -12,7 +12,7 @@ export function Schedule() {
             Schedule
           </div>
 
-          <h1 className="text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold tracking-tight max-w-2xl">
+          <h1 className="text-3xl md:text-4xl lg:text-[40px]  md:leading-13 font-bold tracking-tight max-w-2xl">
             Smarter Marketing.
             <span className="text-blue-600">Higher Returns.</span>
           </h1>

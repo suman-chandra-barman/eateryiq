@@ -44,7 +44,7 @@ export function FaqSection() {
             <div className="w-2 h-2 bg-blue-600 rounded-full" />
             <span className="text-sm font-medium text-gray-700">FAQ</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-[40px]  leading-13  font-bold text-gray-900 mb-4 text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-[40px]  md:leading-13  font-bold text-gray-900 mb-4 text-balance">
             How <span className="text-blue-600">EateryIQ</span> Helps{" "}
             <span className="text-blue-600">You Cut Costs, Boost Sales,</span>{" "}
             and Run Smarter.

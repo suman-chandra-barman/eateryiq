@@ -80,7 +80,7 @@ export function Testimonials() {
             TESTIMONIALS
           </span>
         </div>
-        <h2 className="text-3xl md:text-4xl lg:text-[40px] leading-13 font-bold text-gray-900 max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl lg:text-[40px] md:leading-13 font-bold text-gray-900 max-w-3xl mx-auto">
           How EateryIQ Transforms{" "}
           <span className="text-blue-600">Restaurants From Operations</span> to
           Ownership

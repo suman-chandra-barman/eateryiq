@@ -12,7 +12,7 @@ function AboutPage() {
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
           {/* left side - Content */}
           <div className="space-y-6 max-w-xl">
-            <h1 className="text-3xl md:text-4xl lg:text-[40px]  leading-13 font-bold tracking-tight max-w-2xl">
+            <h1 className="text-3xl md:text-4xl lg:text-[40px]  md:leading-13 font-bold tracking-tight max-w-2xl">
               AI-Powered Insights
               <span className="text-blue-600"> for Every Part of Your </span>
               Restaurant Business.
