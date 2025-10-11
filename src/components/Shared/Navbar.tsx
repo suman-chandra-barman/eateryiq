@@ -42,10 +42,7 @@ const Navbar: React.FC = () => {
   };
 
   // Generate link classes with active state
-  const linkClass = (
-    href: string,
-    base: string = "text-stone-700 hover:text-stone-900 font-medium"
-  ) => {
+  const linkClass = (href: string, base: string = "font-medium") => {
     const normalizedPath = normalizePath(pathname);
     const normalizedHref = normalizePath(href);
     const isActive =
