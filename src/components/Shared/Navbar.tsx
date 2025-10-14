@@ -91,9 +91,11 @@ const Navbar: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button size="sm" variant="outline" className="mr-2">
-              Sign in
+              <Link href="/login">Sign in</Link>
             </Button>
-            <Button>Get Started</Button>
+            <Button>
+              <Link href="/sign-up">Get Started</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
