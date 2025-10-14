@@ -25,7 +25,7 @@ const Footer = () => {
             <Input
               type="email"
               placeholder="Enter your email address"
-              className="border-none focus:ring-0 shadow-none"
+              className="border-none focus:ring-0 shadow-none h-9"
             />
             <Button>Subscribe</Button>
           </div>

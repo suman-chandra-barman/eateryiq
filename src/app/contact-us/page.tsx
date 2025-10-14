@@ -49,7 +49,7 @@ export default function ContactUsPage() {
                 id="fullName"
                 type="text"
                 placeholder="Enter your full name"
-                className="w-full bg-blue-50/50 focus:border-blue-500 focus:ring-blue-500 h-13"
+                className="w-full bg-blue-50/50 focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
@@ -66,7 +66,7 @@ export default function ContactUsPage() {
                 id="email"
                 type="email"
                 placeholder="Enter your email address"
-                className="w-full bg-blue-50/50 focus:border-blue-500 focus:ring-blue-500 h-13"
+                className="w-full bg-blue-50/50 focus:border-blue-500 focus:ring-blue-500"
                 required
               />
             </div>
