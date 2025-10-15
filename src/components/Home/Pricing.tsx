@@ -119,6 +119,7 @@ export function Pricing() {
               </div>
               <p className="text-sm text-gray-600">{plan.description}</p>
               <div className="flex items-baseline gap-1">
+                {plan.name === "Enterprise" && "From "}
                 <span className="text-3xl md:text-4xl lg:text-[40px]  md:leading-13 font-bold">
                   {plan.price}
                 </span>
