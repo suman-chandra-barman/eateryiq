@@ -3,7 +3,6 @@
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -32,14 +31,6 @@ export default function ForgotPasswordPage() {
     <div className="min-h-screen flex container mx-auto">
       {/* Left Side - Form */}
       <div className="flex-1 flex items-center justify-center p-8 relative">
-        {/* Back Button */}
-        <button
-          onClick={() => router.back()}
-          className="absolute top-16 left-16 text-gray-600 hover:text-gray-900"
-        >
-          <ArrowLeft size={24} />
-        </button>
-
         <div className="w-full max-w-lg bg-white rounded-2xl shadow-[0_0_10px_rgba(0,0,0,0.1)] p-8">
           <h1 className="text-3xl font-bold text-center mb-3">
             Forgot Password

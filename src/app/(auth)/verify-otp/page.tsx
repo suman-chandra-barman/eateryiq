@@ -5,7 +5,6 @@ import type React from "react"
 import { useState, useRef, type KeyboardEvent } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import security from "@/assets/auth/security.png"
@@ -73,11 +72,6 @@ export default function VerifyOTPPage() {
     <div className="min-h-screen flex container mx-auto">
       {/* Left Side - Form */}
       <div className="flex-1 flex items-center justify-center p-8 relative">
-        {/* Back Button */}
-        <button onClick={() => router.back()} className="absolute top-16 left-16 text-gray-600 hover:text-gray-900">
-          <ArrowLeft size={24} />
-        </button>
-
         <div className="w-full max-w-lg bg-white rounded-2xl shadow-[0_0_10px_rgba(0,0,0,0.1)] p-8">
           <h1 className="text-3xl font-bold text-center mb-3">Verify with OTP</h1>
           <p className="text-center text-gray-600 text-sm mb-8">Enter the OTP sent to your email</p>
