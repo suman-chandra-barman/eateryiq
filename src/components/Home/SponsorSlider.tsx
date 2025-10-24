@@ -34,8 +34,10 @@ function SponsorSlider() {
         modules={[Autoplay]}
         spaceBetween={20}
         slidesPerView={4}
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
-        loop={true}
+        autoplay={{ delay: 0, disableOnInteraction: false }}
+        loop
+        speed={3000}  
+        allowTouchMove={false}
         breakpoints={{
           640: { slidesPerView: 4 },
           768: { slidesPerView: 5 },
