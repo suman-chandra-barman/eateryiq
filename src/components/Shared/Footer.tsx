@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";

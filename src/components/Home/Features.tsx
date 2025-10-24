@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import feature1 from "@/assets/feature_1.png";
-import feature2 from "@/assets/feature_2.png";
-import feature3 from "@/assets/feature_3.png";
+import feature1 from "@/assets/stats.svg";
+import feature2 from "@/assets/ai-assistant.svg";
+import feature3 from "@/assets/intelligence.svg";
 
 export function Features() {
   const features = [

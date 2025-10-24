@@ -1,7 +1,7 @@
 import { FaqSection } from "@/components/Home/FAQ";
 import { MissionVision } from "@/components/Home/MissionVision";
 import React from "react";
-import img from "@/assets/about-hero.png";
+import img from "@/assets/about-hero.svg";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 

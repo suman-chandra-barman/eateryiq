@@ -1,5 +1,5 @@
 import Image from "next/image";
-import shedule from "@/assets/shedule.png";
+import shedule from "@/assets/calender.svg";
 
 export function Schedule() {
   return (

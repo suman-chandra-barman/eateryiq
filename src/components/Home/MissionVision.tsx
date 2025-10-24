@@ -1,5 +1,5 @@
 import Image from "next/image";
-import banner from "@/assets/team-banner.png";
+import banner from "@/assets/team-banner.svg";
 import eye from "@/assets/eye.svg";
 import target from "@/assets/target.svg";
 

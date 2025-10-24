@@ -1,5 +1,5 @@
 import Image from "next/image";
-import dasboardImage from "@/assets/ChefGPT.png";
+import dasboardImage from "@/assets/ChefGPT.svg";
 
 export function AISportlight() {
   return (

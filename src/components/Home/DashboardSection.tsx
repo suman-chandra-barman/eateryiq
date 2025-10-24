@@ -1,5 +1,5 @@
 import React from "react";
-import dashboardImg from "@/assets/dashboard.png";
+import dashboardImg from "@/assets/dashboard.svg";
 import Image from "next/image";
 import SponsorSlider from "@/components/Home/SponsorSlider";
 
