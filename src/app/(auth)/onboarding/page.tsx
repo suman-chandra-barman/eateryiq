@@ -18,7 +18,6 @@ const WEIGHTS = {
   menu: 15,
   sales: 15,
   labor: 10,
-  // integrations: 10,
   documents: 10,
   marketingPolicies: 10,
 };
@@ -30,7 +29,6 @@ const initialState = {
   menu: { url: "", files: [] as string[] },
   sales: { inStoreMonth: "", inStoreYear: "", onlineMonth: "", onlineYear: "" },
   labor: { employeesFOH: "", employeesBOH: "", payCadence: "" },
-  // integrations: { toast: false, square: false, doordash: false, ubereats: false, quickbooks: false },
   documents: { files: [] as string[] },
   marketingPolicies: { budget: "", policies: "" },
   currentStep: 0,
@@ -43,7 +41,6 @@ const steps = [
   { key: "menu", label: "Menu Upload", required: false },
   { key: "sales", label: "Sales Baseline", required: false },
   { key: "labor", label: "Labor & Staff", required: false },
-  // { key: "integrations", label: "System Connections", required: false },
   { key: "documents", label: "Documents", required: false },
   { key: "marketingPolicies", label: "Marketing & Policies", required: false },
   { key: "complete", label: "Completion", required: false },
@@ -59,18 +56,18 @@ type StepKey = keyof Pick<
   | "menu"
   | "sales"
   | "labor"
-  // | "integrations"
   | "documents"
   | "marketingPolicies"
 >;
 
 export default function OnboardingPage() {
-  const [state, setState] = useState<State>(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    return saved ? JSON.parse(saved) : initialState;
+  const [state, setState] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return saved ? JSON.parse(saved) : initialState;
+    }
+    return initialState; // return default if server-side
   });
-  // const [oauthProvider, setOauthProvider] = useState<string>("");
-  // const [oauthOpen, setOauthOpen] = useState<boolean>(false);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
@@ -83,7 +80,7 @@ export default function OnboardingPage() {
   const current = steps[state.currentStep];
 
   function gotoStep(i: number) {
-    setState((s) => ({
+    setState((s: any) => ({
       ...s,
       currentStep: Math.max(0, Math.min(i, steps.length - 1)),
     }));
@@ -107,24 +104,6 @@ export default function OnboardingPage() {
     localStorage.removeItem(STORAGE_KEY);
     setState(initialState);
   }
-
-  // function openOAuth(provider: string) {
-  //   setOauthProvider(provider);
-  //   setOauthOpen(true);
-  // }
-
-  // function authorizeOAuth() {
-  //   // Mark provider as connected
-  //   setState((s) => ({
-  //     ...s,
-  //     integrations: { ...s.integrations, [oauthProvider]: true as any },
-  //   }));
-  //   setOauthOpen(false);
-  // }
-
-  // function disconnectOAuth(provider: string) {
-  //   setState((s) => ({ ...s, integrations: { ...s.integrations, [provider]: false as any } }));
-  // }
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
@@ -233,14 +212,6 @@ export default function OnboardingPage() {
               {current.key === "labor" && (
                 <LaborStep state={state} setState={setState} />
               )}
-              {/* {current.key === "integrations" && (
-                <IntegrationsStep
-                  state={state}
-                  setState={setState}
-                  onConnect={openOAuth}
-                  onDisconnect={disconnectOAuth}
-                />
-              )} */}
               {current.key === "documents" && (
                 <DocumentsStep state={state} setState={setState} />
               )}
@@ -327,15 +298,6 @@ export default function OnboardingPage() {
           </Card>
         </main>
       </div>
-
-      {/* OAuth Mock Modal */}
-      {/* {oauthOpen && (
-        <OAuthModal
-          provider={oauthProvider}
-          onAuthorize={authorizeOAuth}
-          onCancel={() => setOauthOpen(false)}
-        />
-      )} */}
     </div>
   );
 }
@@ -450,19 +412,6 @@ function FileDrop({
         PDF, CSV, DOCX, PNG/JPG supported (demo)
       </div>
     </div>
-  );
-}
-
-function Toggle({ label, checked, onChange }: any) {
-  return (
-    <label className="flex items-center justify-between border rounded-lg px-3 py-2">
-      <span className="text-sm">{label}</span>
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={(e) => onChange(e.target.checked)}
-      />
-    </label>
   );
 }
 
@@ -749,41 +698,6 @@ function LaborStep({
   );
 }
 
-// function IntegrationsStep({ state, setState, onConnect, onDisconnect }: { state: State; setState: any; onConnect: (p: string) => void; onDisconnect: (p: string) => void; }) {
-//   const providers = [
-//     { key: "toast", label: "Toast" },
-//     { key: "square", label: "Square" },
-//     { key: "doordash", label: "DoorDash" },
-//     { key: "ubereats", label: "Uber Eats" },
-//     { key: "quickbooks", label: "QuickBooks" },
-//   ] as const;
-
-//   return (
-//     <div className="grid md:grid-cols-2 gap-3">
-//       {providers.map((p) => {
-//         const connected = (state.integrations as any)[p.key];
-//         return (
-//           <div key={p.key} className={`border rounded-xl p-4 flex items-center justify-between ${connected ? 'bg-blue-50 border-blue-200' : 'bg-white'}`}>
-//             <div>
-//               <div className="font-semibold">{p.label}</div>
-//               <div className="text-xs text-gray-600">{connected ? 'Connected' : 'Not connected'}</div>
-//             </div>
-//             {connected ? (
-//               <button className="text-xs px-3 py-1 rounded-full border hover:bg-gray-50" onClick={() => onDisconnect(p.key)}>
-//                 Disconnect
-//               </button>
-//             ) : (
-//               <button className="text-xs px-3 py-1 rounded-full border bg-white hover:bg-gray-50" onClick={() => onConnect(p.key)}>
-//                 Connect
-//               </button>
-//             )}
-//           </div>
-//         );
-//       })}
-//     </div>
-//   );
-// }
-
 function DocumentsStep({
   state,
   setState,
@@ -872,35 +786,6 @@ function Completion({ state, percent }: { state: State; percent: number }) {
   );
 }
 
-// ===== OAuth Mock Modal =====
-// function OAuthModal({ provider, onAuthorize, onCancel }: { provider: string; onAuthorize: () => void; onCancel: () => void }) {
-//   const pretty = (p: string) => p.charAt(0).toUpperCase() + p.slice(1);
-//   return (
-//     <div className="fixed inset-0 bg-black/30 grid place-items-center z-50">
-//       <div className="bg-white w-full max-w-md rounded-2xl shadow-xl border overflow-hidden">
-//         <div className="p-5 border-b">
-//           <div className="text-lg font-semibold">Connect {pretty(provider)}</div>
-//           <div className="text-sm text-gray-600">Mock OAuth screen for demo purposes.</div>
-//         </div>
-//         <div className="p-5 space-y-3 text-sm">
-//           <p>
-//             <b>EateryIQ</b> is requesting access to your {pretty(provider)} account to import sales, menu, and fee data.
-//           </p>
-//           <ul className="list-disc ml-5 text-gray-700">
-//             <li>Read sales and order data</li>
-//             <li>Read menu items / modifiers</li>
-//             <li>Read fees and payouts</li>
-//           </ul>
-//         </div>
-//         <div className="p-5 border-t flex items-center gap-3 justify-end">
-//           <button onClick={onCancel} className="px-4 py-2 rounded-full border hover:bg-gray-50 text-sm">Cancel</button>
-//           <button onClick={onAuthorize} className="px-4 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm">Authorize</button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
 // ===== Helpers =====
 function isLocationComplete(state: State) {
   return Boolean(
@@ -939,8 +824,6 @@ function isStepComplete(state: State, key: StepKey) {
           state.labor.employeesBOH ||
           state.labor.payCadence
       );
-    // case "integrations":
-    //   return Object.values(state.integrations).some(Boolean);
     case "documents":
       return state.documents.files.length > 0;
     case "marketingPolicies":
@@ -966,7 +849,6 @@ function calculatePercent(state: State) {
     ["menu", WEIGHTS.menu],
     ["sales", WEIGHTS.sales],
     ["labor", WEIGHTS.labor],
-    // ["integrations", WEIGHTS.integrations],
     ["documents", WEIGHTS.documents],
     ["marketingPolicies", WEIGHTS.marketingPolicies],
   ];

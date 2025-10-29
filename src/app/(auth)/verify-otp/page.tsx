@@ -60,7 +60,7 @@ export default function VerifyOTPPage() {
     const otpValue = otp.join("")
     console.log("[v0] OTP:", otpValue)
     // Handle OTP verification logic here
-    router.push("/reset-password")
+    router.push("/onboarding")
   }
 
   const handleResend = () => {
