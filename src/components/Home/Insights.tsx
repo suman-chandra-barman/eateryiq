@@ -1,29 +1,31 @@
 import { Card, CardContent } from "@/components/ui/card";
-import site from "@/assets/site.svg";
+import instant from "@/assets/instant.svg";
 import contract from "@/assets/contract.svg";
-import operation from "@/assets/operation.svg";
+import data from "@/assets/data.svg";
 import hr from "@/assets/hr.svg";
 import Image from "next/image";
 
 const features = [
   {
-    icon: site,
-    title: "New Site Selection",
-    description: "Location analysis using traffic/demographics data.",
+    icon: instant,
+    title: "Instant, Expert-Level Answers",
+    description: "Built-in Prompt AI",
+  },
+  {
+    icon: data,
+    title: "Data-Driven Reports & Projections",
+    description:
+      "Upload your data and let EateryGPT generate detailed reports, trend analysis, and future forecasts.",
   },
   {
     icon: contract,
-    title: "Contract Review",
-    description: "AI flagging risks & clauses.",
-  },
-  {
-    icon: operation,
-    title: "Operations Review",
-    description: "Deep dive on efficiency & compliance.",
+    title: "Smart Marketing & Sales Optimization",
+    description:
+      "Automatically build optimized promotional calendars, digital ad schedules, and third-party delivery campaigns.",
   },
   {
     icon: hr,
-    title: "HR Analysis",
+    title: "Executive-Level Insights",
     description: "Turnover & staffing model recommendations.",
   },
 ];
