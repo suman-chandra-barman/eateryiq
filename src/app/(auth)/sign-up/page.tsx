@@ -284,33 +284,39 @@
 //   );
 // }
 
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
-import Image from "next/image"
-import { Eye, EyeOff } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+import { Eye, EyeOff } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import signup from "@/assets/auth/signup.png";
 
 type SignUpFormData = {
-  fullName: string
-  businessName?: string
-  role: string
-  email: string
-  password: string
-  confirmPassword: string
-}
+  fullName: string;
+  businessName?: string;
+  role: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
 
 export default function SignUpPage() {
-  const router = useRouter()
-  const [showPassword, setShowPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const {
     register,
@@ -318,20 +324,20 @@ export default function SignUpPage() {
     watch,
     setValue,
     formState: { errors },
-  } = useForm<SignUpFormData>()
+  } = useForm<SignUpFormData>();
 
-  const password = watch("password")
+  const password = watch("password");
 
   const onSubmit = (data: SignUpFormData) => {
-    console.log("[v0] Sign up data:", data)
+    console.log("[v0] Sign up data:", data);
     // Handle sign up logic here
-    router.push("/verify-otp")
-  }
+    router.push("/verify-otp");
+  };
 
   const handleGoogleSignIn = () => {
-    console.log("[v0] Google sign in clicked")
+    console.log("[v0] Google sign in clicked");
     // Handle Google sign in logic
-  }
+  };
 
   return (
     <div className="min-h-screen flex container mx-auto py-12">
@@ -352,13 +358,18 @@ export default function SignUpPage() {
                 {...register("fullName", { required: "Full name is required" })}
                 className="mt-1"
               />
-              {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message}</p>}
+              {errors.fullName && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.fullName.message}
+                </p>
+              )}
             </div>
 
             {/* Business Name */}
             <div>
               <Label htmlFor="businessName" className="text-sm font-medium">
-                Business Name <span className="text-gray-400">(optional for Owners)</span>
+                Business Name{" "}
+                <span className="text-gray-400">(optional for Owners)</span>
               </Label>
               <Input
                 id="businessName"
@@ -378,12 +389,16 @@ export default function SignUpPage() {
                   <SelectValue placeholder="Select your role..." />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="operator">Operator</SelectItem>
-                  <SelectItem value="manager">Manager</SelectItem>
-                  <SelectItem value="franchisee">Franchisee</SelectItem>
+                  <SelectItem value="operations">Operations</SelectItem>
+                  <SelectItem value="marketing manager">Marketing Manager</SelectItem>
+                  <SelectItem value="executive">Executive</SelectItem>
                 </SelectContent>
               </Select>
-              {errors.role && <p className="text-red-500 text-xs mt-1">{errors.role.message}</p>}
+              {errors.role && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.role.message}
+                </p>
+              )}
             </div>
 
             {/* Email */}
@@ -404,7 +419,11 @@ export default function SignUpPage() {
                 })}
                 className="mt-1"
               />
-              {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+              {errors.email && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
 
             {/* Password */}
@@ -433,7 +452,11 @@ export default function SignUpPage() {
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
-              {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
+              {errors.password && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
 
             {/* Confirm Password */}
@@ -448,7 +471,8 @@ export default function SignUpPage() {
                   placeholder="Enter your password..."
                   {...register("confirmPassword", {
                     required: "Please confirm your password",
-                    validate: (value) => value === password || "Passwords do not match",
+                    validate: (value) =>
+                      value === password || "Passwords do not match",
                   })}
                 />
                 <button
@@ -456,21 +480,35 @@ export default function SignUpPage() {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
-                  {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  {showConfirmPassword ? (
+                    <EyeOff size={20} />
+                  ) : (
+                    <Eye size={20} />
+                  )}
                 </button>
               </div>
-              {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword.message}</p>}
+              {errors.confirmPassword && (
+                <p className="text-red-500 text-xs mt-1">
+                  {errors.confirmPassword.message}
+                </p>
+              )}
             </div>
 
             {/* Submit Button */}
-            <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 h-12">
+            <Button
+              type="submit"
+              className="w-full bg-blue-600 hover:bg-blue-700 h-12"
+            >
               Signup
             </Button>
 
             {/* Login Link */}
             <p className="text-center text-sm">
               Already have an account?{" "}
-              <Link href="/login" className="text-blue-600 font-medium hover:underline">
+              <Link
+                href="/login"
+                className="text-blue-600 font-medium hover:underline"
+              >
                 Log in now
               </Link>
             </p>
@@ -486,7 +524,12 @@ export default function SignUpPage() {
             </div>
 
             {/* Google Sign In */}
-            <Button type="button" variant="outline" onClick={handleGoogleSignIn} className="w-full h-12 bg-transparent">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={handleGoogleSignIn}
+              className="w-full h-12 bg-transparent"
+            >
               <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                 <path
                   fill="#4285F4"
@@ -524,6 +567,5 @@ export default function SignUpPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-
