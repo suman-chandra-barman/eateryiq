@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import type React from "react";
@@ -9,14 +10,53 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Mail, Phone, MapPin } from "lucide-react";
 import pointer from "@/assets/lsicon_pointer.svg";
 import Image from "next/image";
+import { useContactMutation } from "@/redux/features/contact/contactApi";
+import { toast } from "sonner";
 
 export default function ContactUsPage() {
   const [agreed, setAgreed] = useState(false);
+  const [formData, setFormData] = useState({
+    full_name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [contact, { isLoading }] = useContactMutation();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted");
+
+    if (!agreed) {
+      toast.error("Please agree to the terms and conditions");
+      return;
+    }
+
+    try {
+      const response = await contact({
+        full_name: formData.full_name,
+        email: formData.email,
+        message: formData.message,
+        is_agree: agreed,
+      }).unwrap();
+
+      // Show success toast
+      toast.success(response.message || "Your message has been received!");
+
+      // Reset form
+      setFormData({
+        full_name: "",
+        email: "",
+        message: "",
+      });
+      setAgreed(false);
+    } catch (error: any) {
+      // Show error toast
+      const errorMessage =
+        error?.data?.message ||
+        error?.message ||
+        "Failed to send message. Please try again.";
+      toast.error(errorMessage);
+    }
   };
 
   return (
@@ -50,6 +90,10 @@ export default function ContactUsPage() {
                 type="text"
                 placeholder="Enter your full name"
                 className="w-full bg-blue-50/50 focus:border-blue-500 focus:ring-blue-500"
+                value={formData.full_name}
+                onChange={(e) =>
+                  setFormData({ ...formData, full_name: e.target.value })
+                }
                 required
               />
             </div>
@@ -67,6 +111,10 @@ export default function ContactUsPage() {
                 type="email"
                 placeholder="Enter your email address"
                 className="w-full bg-blue-50/50 focus:border-blue-500 focus:ring-blue-500"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 required
               />
             </div>
@@ -84,6 +132,10 @@ export default function ContactUsPage() {
                 placeholder="Enter Messages"
                 rows={6}
                 className="w-full bg-blue-50/50 focus:border-blue-500 focus:ring-blue-500 resize-none h-26"
+                value={formData.message}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
                 required
               />
             </div>
@@ -110,10 +162,10 @@ export default function ContactUsPage() {
             {/* Submit Button */}
             <Button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg font-semibold rounded-lg"
-              //   disabled={!agreed}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={!agreed || isLoading}
             >
-              Send Your Message
+              {isLoading ? "Sending..." : "Send Your Message"}
             </Button>
           </form>
 

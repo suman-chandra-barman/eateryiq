@@ -91,10 +91,10 @@ const Navbar: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button size="sm" variant="outline" className="mr-2">
-              <Link href="/login">Sign in</Link>
+              <Link href={process.env.NEXT_PUBLIC_DASHBOARD_URL + "/login"}>Sign in</Link>
             </Button>
             <Button>
-              <Link href="/sign-up">Get Started</Link>
+              <Link href={process.env.NEXT_PUBLIC_DASHBOARD_URL + "/sign-up"}>Get Started</Link>
             </Button>
           </div>
 
