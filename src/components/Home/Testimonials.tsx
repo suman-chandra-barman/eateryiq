@@ -68,7 +68,7 @@ const testimonials = [
 
 export function Testimonials() {
   const swiperRef = useRef<SwiperType>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section className="relative my-12 md:my-24 overflow-hidden">
@@ -167,7 +167,7 @@ export function Testimonials() {
       </div>
 
       {/* CTA Button */}
-      <div className="text-center mt-12">
+      {/* <div className="text-center mt-12">
         <Button
           size="lg"
           className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-full"
@@ -175,9 +175,9 @@ export function Testimonials() {
         >
           Share Your Thought
         </Button>
-      </div>
+      </div> */}
 
-      <ShareThoughtModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+      {/* <ShareThoughtModal open={isModalOpen} onOpenChange={setIsModalOpen} /> */}
     </section>
   );
 }
