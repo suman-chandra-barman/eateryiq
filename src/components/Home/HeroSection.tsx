@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -28,13 +29,13 @@ const HeroSection = () => {
         </p>
         <div className="space-x-4">
           <Button className="bg-blue-600 text-white hover:bg-blue-700">
-            Get Started Free
+            <Link target="_blank" href={`${process.env.NEXT_PUBLIC_DASHBOARD_URL}/sign-up`}>Get Started Free</Link>
           </Button>
           <Button
             variant="outline"
             className="border-blue-600 text-blue-600 hover:bg-blue-50"
           >
-            Book a Demo
+            <Link href="/contact-us">Book a Demo</Link>
           </Button>
         </div>
       </div>

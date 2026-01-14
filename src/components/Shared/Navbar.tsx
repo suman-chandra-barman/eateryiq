@@ -91,10 +91,10 @@ const Navbar: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Button size="sm" variant="outline" className="mr-2">
-              <Link href={process.env.NEXT_PUBLIC_DASHBOARD_URL + "/login"}>Sign in</Link>
+              <Link target="_blank" href={process.env.NEXT_PUBLIC_DASHBOARD_URL + "/login"}>Sign in</Link>
             </Button>
             <Button>
-              <Link href={process.env.NEXT_PUBLIC_DASHBOARD_URL + "/sign-up"}>Get Started</Link>
+              <Link target="_blank" href={process.env.NEXT_PUBLIC_DASHBOARD_URL + "/sign-up"}>Get Started</Link>
             </Button>
           </div>
 
@@ -158,9 +158,11 @@ const Navbar: React.FC = () => {
               {/* CTA Buttons */}
               <div className="flex space-x-2">
                 <Button size="sm" variant="outline" onClick={toggleMenu}>
-                  Sign in
+                  <Link target="_blank" href={process.env.NEXT_PUBLIC_DASHBOARD_URL + "/login"}>Sign in</Link>
                 </Button>
-                <Button onClick={toggleMenu}>Get Started</Button>
+                <Button onClick={toggleMenu}>
+                  <Link target="_blank" href={process.env.NEXT_PUBLIC_DASHBOARD_URL + "/sign-up"}>Get Started</Link>
+                </Button>
               </div>
             </div>
           </div>

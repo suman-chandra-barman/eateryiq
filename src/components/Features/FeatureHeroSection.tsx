@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const FeatureHeroSection = () => {
   return (
@@ -20,7 +21,7 @@ const FeatureHeroSection = () => {
         </p>
         <div className="space-x-4">
           <Button className="bg-blue-600 text-white hover:bg-blue-700">
-            Get Started Free
+            <Link target="_blank" href={`${process.env.NEXT_PUBLIC_DASHBOARD_URL}/sign-up`}>Get Started Free</Link>
           </Button>
         </div>
       </div>
